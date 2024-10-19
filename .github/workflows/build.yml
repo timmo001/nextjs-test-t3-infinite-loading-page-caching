@@ -1,0 +1,43 @@
+---
+name: Build
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-nextjs:
+    name: 🏗️ Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v4.2.1
+        with:
+          ref: ${{ github.head_ref }}
+      - name: 🍎 Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: 🏗️ Set up Node.js (pnpm)
+        uses: actions/setup-node@v4.0.4
+        with:
+          cache-dependency-path: pnpm-lock.yaml
+          cache: pnpm
+          check-latest: true
+          node-version: 20.x
+      - name: ⤵️ Install dependencies
+        run: pnpm install
+      - name: 🏗️ Build
+        run: pnpm build
+        env:
+          SKIP_ENV_VALIDATION: true
