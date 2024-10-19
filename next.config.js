@@ -5,6 +5,10 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  eslint: {
+    ignoreDuringBuilds: true, // Disable ESLint during builds, covered by .github/workflows/lint.yml
+  },
+};
 
 export default config;
