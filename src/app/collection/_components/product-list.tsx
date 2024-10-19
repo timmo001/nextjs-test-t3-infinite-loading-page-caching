@@ -84,6 +84,7 @@ export default function ProductList() {
       ) : (
         <InView
           className="flex w-full max-w-screen-lg flex-col items-center justify-center p-3"
+          rootMargin="0px 0px 100% 0px"
           onChange={async (inView) => {
             if (inView) {
               console.log("Load more in view");
