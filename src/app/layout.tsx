@@ -8,9 +8,9 @@ import { ThemeProvider } from "next-themes";
 import { HydrateClient } from "~/trpc/server";
 
 export const metadata: Metadata = {
-  title: "Test Navigation Caching",
-  description: "Test Navigation Caching",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "Test",
+  description: "Test",
+  icons: [{ rel: "icon", url: "/icon" }],
 };
 
 export default async function RootLayout({
