@@ -10,7 +10,7 @@ import { Button } from "~/components/ui/button";
 export default function ProductList() {
   const productQuery = api.collection.getProducts.useInfiniteQuery(
     {
-      limit: 40,
+      limit: 80,
     },
     {
       getNextPageParam: (lastPage) => lastPage.nextCursor,
