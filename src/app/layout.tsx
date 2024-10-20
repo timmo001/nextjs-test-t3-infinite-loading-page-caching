@@ -6,6 +6,7 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 import { ThemeProvider } from "next-themes";
 import { HydrateClient } from "~/trpc/server";
+import { Navigation } from "~/components/navigation";
 
 export const metadata: Metadata = {
   title: "Test",
@@ -24,9 +25,10 @@ export default async function RootLayout({
             <ThemeProvider
               attribute="class"
               defaultTheme="dark"
-              // enableSystem
+              enableSystem
               disableTransitionOnChange
             >
+              <Navigation />
               {children}
             </ThemeProvider>
           </HydrateClient>
