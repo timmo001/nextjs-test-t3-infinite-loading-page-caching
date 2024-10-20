@@ -7,7 +7,7 @@ import { api } from "~/trpc/react";
 import { ProductCard } from "~/components/product/card";
 import { Button } from "~/components/ui/button";
 
-export default function ProductList() {
+export function ProductList() {
   const productQuery = api.collection.getProducts.useInfiniteQuery(
     {
       limit: 80,
