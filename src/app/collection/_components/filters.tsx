@@ -42,12 +42,11 @@ const data = {
 
 export function Filters() {
   return (
-    <Sidebar>
+    <Sidebar className="top-14 h-[92vh]" variant="floating">
       <SidebarHeader>
-        <h2 className="mx-2 mt-2 text-lg font-semibold">Filters</h2>
+        <h2 className="text-lg font-semibold">Filters</h2>
       </SidebarHeader>
       <SidebarContent className="gap-0">
-        {/* We create a collapsible SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <Collapsible
             key={item.title}
@@ -70,7 +69,7 @@ export function Filters() {
                   <SidebarMenu>
                     {item.items.map((item) => (
                       <SidebarMenuItem key={item.title}>
-                        <SidebarMenuButton asChild isActive={item.isActive}>
+                        <SidebarMenuButton asChild>
                           <a href={item.url}>{item.title}</a>
                         </SidebarMenuButton>
                       </SidebarMenuItem>
@@ -82,7 +81,6 @@ export function Filters() {
           </Collapsible>
         ))}
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   );
 }

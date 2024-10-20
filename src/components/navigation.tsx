@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navigation() {
   return (
-    <header className="bg-base-foreground sticky top-0 z-50 flex items-center justify-center px-2 pb-3 pt-2 shadow-md">
+    <header className="bg-base-foreground fixed top-0 z-50 flex w-full items-center justify-center bg-background px-2 pb-3 pt-2 shadow-md">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>

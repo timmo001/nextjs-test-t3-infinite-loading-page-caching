@@ -29,6 +29,7 @@ export default async function RootLayout({
               disableTransitionOnChange
             >
               <Navigation />
+              <div className="relative h-14 w-full" />
               {children}
             </ThemeProvider>
           </HydrateClient>
